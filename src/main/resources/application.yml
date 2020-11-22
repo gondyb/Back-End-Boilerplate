@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: backend-template
+
+  datasource:
+    initialization-mode: always
+    url: jdbc:postgresql://localhost:5432/mi-dev
+    platform: postgres
+    username: benjamin
+    password: mi-password
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+myapp:
+  security:
+    passwordStrength: 10
+    tokenSecret: dev-token-secret
+    tokenIssuer: ${spring.application.name}

@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  axonserver:
+    image: axoniq/axonserver
+    hostname: axonserver
+    volumes:
+    - axonserver-data:/data
+    - axonserver-events:/eventdata
+    ports:
+    - '8024:8024'
+    - '8124:8124'
+    - '8224:8224'
+    networks:
+      - backend-template
+
+volumes:
+  axonserver-data:
+  axonserver-events:
+
+networks:
+  backend-template:
